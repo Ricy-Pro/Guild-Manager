@@ -1,0 +1,27 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+
+<form (ngSubmit)="register()">
+  <h3>Register Here</h3>
+
+  <label for="username">Username</label>
+  <input id="username" [(ngModel)]="username" name="username" type="text" placeholder="Choose a username" required />
+
+  <label for="password">Password</label>
+  <input id="password" [(ngModel)]="password" name="password" type="password" placeholder="Enter a password" required />
+
+  <label for="guild">Guild Name</label>
+  <input id="guild" [(ngModel)]="guildName" name="guildName" type="text" placeholder="e.g. KnightsOfSpring" required />
+
+  <label for="role">Register as</label>
+  <select id="role" [(ngModel)]="asLeader" name="asLeader">
+    <option [value]="true">Guild Leader</option>
+    <option [value]="false">Guild Member</option>
+  </select>
+
+  <button type="submit">Register</button>
+
+  <p *ngIf="message">{{ message }}</p>
+</form>
