@@ -15,7 +15,9 @@ export class LoginComponent {
   message: string = '';
 
   constructor(private http: HttpClient, private router: Router) {}
-
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
   login() {
     const loginRequest = {
       username: this.username,

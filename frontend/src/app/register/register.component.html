@@ -22,6 +22,7 @@
   </select>
 
   <button type="submit">Register</button>
+  <button type="button" (click)="goToLogin()" class="redirect-button">Already have an account? Login</button>
 
   <p *ngIf="message">{{ message }}</p>
 </form>
