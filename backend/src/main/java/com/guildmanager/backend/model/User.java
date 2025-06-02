@@ -6,10 +6,13 @@ import lombok.*;
 
 @Entity
 @Table(name = "users")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+
 public class User {
 
     @Id
@@ -28,5 +31,6 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "guild_id")
+
     private Guild guild;
 }

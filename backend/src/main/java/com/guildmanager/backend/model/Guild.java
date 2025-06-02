@@ -8,7 +8,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "guilds")
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -23,6 +25,7 @@ public class Guild {
 
     @OneToOne
     @JoinColumn(name = "leader_id", nullable = false)
+
     private User leader;
 
     @OneToMany(mappedBy = "guild")

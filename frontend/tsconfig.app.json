@@ -7,9 +7,12 @@
     "types": []
   },
   "files": [
+    "src/global-polyfill.ts",
     "src/main.ts"
   ],
   "include": [
+    "src/global-polyfill.ts",
     "src/**/*.d.ts"
+
   ]
 }

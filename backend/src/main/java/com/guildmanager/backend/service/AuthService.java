@@ -71,7 +71,18 @@ public class AuthService {
             throw new InvalidCredentialsException("Invalid credentials");
         }
 
+        Guild guild = user.getGuild(); // poate fi null, dacă nu are încă
+        Long guildId = guild != null ? guild.getId() : null;
+        String guildName = guild != null ? guild.getName() : null;
 
-        return new LoginResponse("Login successful",user.getId(),user.getRole().name());
+        return new LoginResponse(
+                "Login successful",
+                user.getId(),
+                user.getRole().name(),
+                user.getUsername(),
+                guildId,
+                guildName
+        );
     }
+
 }

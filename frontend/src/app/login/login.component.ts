@@ -28,14 +28,20 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           this.message = response.message;
-          // Store user details (optional, depending on your implementation)
+
+          // Salvează toate valorile în localStorage
           localStorage.setItem('userId', response.userId);
           localStorage.setItem('role', response.role);
-          this.router.navigate(['/dashboard']); // Redirect to a dashboard or home page
+          localStorage.setItem('username', response.username);
+          localStorage.setItem('guildId', response.guildId);
+          localStorage.setItem('guildName', response.guildName);
+
+          this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           this.message = 'Invalid credentials. Please try again.';
         }
       });
   }
+
 }

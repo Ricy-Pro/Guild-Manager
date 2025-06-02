@@ -1,0 +1,18 @@
+<div *ngIf="event" class="event-details-card">
+  <h3 class="event-title">{{ event.name }}</h3>
+  <p class="event-description">{{ event.description }}</p>
+  <p><strong>Date:</strong> {{ event.dateTime | date:'short' }}</p>
+  <p><strong>Participants:</strong> {{ event.participants.length }}</p>
+
+  <div class="actions">
+    <ng-container *ngIf="isLeader && isCreator()">
+      <button class="action-button modify" (click)="modify()">Modify</button>
+      <button class="action-button delete" (click)="delete()">Delete</button>
+    </ng-container>
+
+    <ng-container *ngIf="!isLeader">
+      <button *ngIf="!isParticipant()" class="action-button join" (click)="join()">Join</button>
+      <button *ngIf="isParticipant()" class="action-button exit" (click)="exit()">Exit</button>
+    </ng-container>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-package com.guildmanager.backend.service;
+package com.guildmanager.backend.service.controller;
 
 import com.guildmanager.backend.dto.AuthResponse;
 import com.guildmanager.backend.dto.LoginRequest;

@@ -1,0 +1,20 @@
+<div class="event-list">
+  <h3 class="title">Guild Events</h3>
+
+  <div *ngIf="events.length > 0; else noEvents" class="event-cards">
+    <div *ngFor="let event of events" class="event-card" (click)="select(event)">
+      <div class="event-header">
+        <h4>{{ event.name }}</h4>
+        <span class="event-date">{{ event.dateTime | date: 'short' }}</span>
+      </div>
+      <p class="event-description">{{ event.description }}</p>
+      <div class="event-footer">
+        <span>Limit: {{ event.attendanceLimit - event.participants.length }}</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noEvents>
+    <p class="no-events">No events available for this guild.</p>
+  </ng-template>
+</div>

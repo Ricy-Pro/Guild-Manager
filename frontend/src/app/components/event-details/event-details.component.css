@@ -1,0 +1,64 @@
+.event-details-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px auto;
+  max-width: 600px;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.event-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.event-description {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #e0e0e0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+}
+
+.modify {
+  background-color: #3498db;
+  color: white;
+}
+
+.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.join {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.exit {
+  background-color: #f1c40f;
+  color: black;
+}
